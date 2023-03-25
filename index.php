@@ -121,6 +121,9 @@ if (!isset($_SESSION['user'])) {
 	.content-p{
 		margin-bottom: 20px;
 	}
+	.openBtn:hover{
+		cursor: pointer;
+	}
 </style>
 <body>
 
@@ -148,7 +151,7 @@ if (!isset($_SESSION['user'])) {
 						<input type="radio" name="oprations" class="oprations" id="povs" value="PoV"><label for="povs" style="font-weight: 500">&nbsp;POVs</label>
 					</div>
 					<div class="col-md-5">
-						<input type="radio" name="oprations" class="oprations" id="questions" value="Questions"><label for="questions" style="font-weight: 500;">&nbsp;Interesting Insights (Coming Soon)</label>
+						<input type="radio" name="oprations" class="oprations" id="questions" value="Questions" disabled><label for="questions" style="font-weight: 500;">&nbsp;Interesting Insights (Coming Soon)</label>
 					</div>
 				</div>
 			</div>
@@ -178,7 +181,7 @@ if (!isset($_SESSION['user'])) {
 								    		<!-- <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
 											  Launch demo modal
 											</button>-->										
-											<i class="far fa-question-circle open_upload_limit" style="font-size: 14px;" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>
+											<i class="far fa-question-circle open_upload_limit openBtn" style="font-size: 14px;" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>
 											<span style="font-size: 14px;" class="open_upload_limit openBtn" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Upload Limit</span>
 
 								    	</div>								    	
