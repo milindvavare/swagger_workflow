@@ -654,10 +654,6 @@ function go_data(){
 
 
 
-$('.run_another_task').click(function(){
-	 $('.next-section').hide();
-	 $('.home-section').show();
-})
 
 
 

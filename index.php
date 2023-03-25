@@ -788,6 +788,19 @@ $(document).ready(function(){
 });
 
 
+$('.run_another_task').click(function(){
+	 $('.next-section').hide();
+	 $('.home-section').show();
+	$('.text_feedback').val("");
+	$('#1').removeClass("active_rating");
+	$('#2').removeClass("active_rating");
+	$('#3').removeClass("active_rating");
+	$('#4').removeClass("active_rating");
+	$('#5').removeClass("active_rating");
+})
+
+
+
 
 var modal = document.getElementsByClassName('modal')[0];
 window.addEventListener("click", closeModal);
