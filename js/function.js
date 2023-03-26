@@ -17,7 +17,7 @@ let arr_links2 = [];
 
 
     $('.upload_links').click(function(){
-    console.log(url_parse_ids.length);
+    //console.log(url_parse_ids.length);
       var fileUpload = $("input[type='file']");
       var totallinks = arr_links.length;
       var totalfile = parseInt(fileUpload.get(0).files.length);
@@ -26,11 +26,11 @@ let arr_links2 = [];
         var url_links = $('.url_links').val();
         var arr_temp = '';
         // arr_links.push(url_links);
-         console.log(arr_links);
+        // console.log(arr_links);
         let domain = (new URL(url_links));
         var selectedVal = "";
 		var selected = $("input[name='domain_link']:checked");
-		  console.log(selected);
+		  //console.log(selected);
 		if (selected.length > 0) {
 		    selectedVal = selected.val();
 
@@ -52,7 +52,7 @@ let arr_links2 = [];
 					            method:'POST',
 					             data:{url_links:arr_links},
 					             success:function(data){
-					             	console.log(data);
+					             	//console.log(data);
 					             	var decode_json = JSON.parse(data);
 							        	if (decode_json['detail']) {
 							        		alert(decode_json['detail']);
@@ -128,7 +128,7 @@ let arr_links2 = [];
 					            method:'POST',
 					             data:{url_links:arr_links},
 					             success:function(data){
-					             	console.log(data);
+					             	//console.log(data);
 					             	var decode_json = JSON.parse(data);
 							        	if (decode_json['detail']) {
 							        		alert(decode_json['detail']);
@@ -150,7 +150,7 @@ let arr_links2 = [];
 											// 	    $(".go_btn").removeAttr("disabled");
 											// 	}
 					                        var children_links = "";
-					                        console.log(arr_links.length);
+					                        //console.log(arr_links.length);
 					                              for (var i = 0; i < arr_links.length; ++i) {
 					                                  // children_links +=  '<li>'+ arr_links[i] + '<span class="remove-list" onclick="return this.parentNode.remove()">X</span>' + '</li>'
 					                              	children_links += '<li class="new-list">';
@@ -163,12 +163,12 @@ let arr_links2 = [];
 					                              }
 					                            $('#linksList').html(children_links);
 
-					                            console.log(data);
+					                           // console.log(data);
 					                            var jsondata = JSON.parse(data);
-					                            console.log(jsondata['files'].length);
+					                            //console.log(jsondata['files'].length);
 					                            //url_parse_ids = [];
 					                            for (var im = 0; im < jsondata['files'].length; im++) {					                            	
-					                                console.log(jsondata['files'][im]['id']);
+					                                //console.log(jsondata['files'][im]['id']);
 					                                url_parse_ids.push(jsondata['files'][im]['id']);
 					                            }
 
@@ -205,16 +205,16 @@ $(document).on('click', '.delete_from_array', function(){
 
  
  for (var i = 0; i < url_parse_ids.length; i++) {
-	 	console.log("replaceurl:"+url_parse_ids[i].replace(/-TS:[^/]+/, ''));
+	 	//console.log("replaceurl:"+url_parse_ids[i].replace(/-TS:[^/]+/, ''));
 	 	var filelink = url_parse_ids[i].replace(/-TS:[^/]+/, '');
 	 	url_parse_ids = url_parse_ids.filter(x => x !== link);
-	 	console.log(url_parse_ids);
+	 	//console.log(url_parse_ids);
 
 	 	if (link == filelink) {
 	 		//console.log("found");
 	 		var indexToRemove = i;
             url_parse_ids.splice(indexToRemove, 1);
-	 		console.log(url_parse_ids);
+	 		//console.log(url_parse_ids);
 	 	}
 	 	else{
 	 		//console.log("no found");
@@ -236,13 +236,13 @@ $(document).on('click', '.delete_from_array_url', function(){
 	 	var filelink = url_parse_ids[i].replace(/-TS:[^/]+/, '');
 	 	//var filelink = url_parse_ids[i];
 	 	url_parse_ids = url_parse_ids.filter(x => x !== link);
-	 	console.log("urlname:"+filelink);
+	 	//console.log("urlname:"+filelink);
 
 	 	if (link == filelink) {
 	 		//console.log("found");
 	 		var indexToRemove = i;
             url_parse_ids.splice(indexToRemove, 1);
-	 		console.log(url_parse_ids);
+	 		//console.log(url_parse_ids);
 	 	}
 	 	else{
 	 		//console.log("no found");
@@ -270,7 +270,7 @@ alert("You are only allowed to upload a maximum of 2 files or Links");
 }else{
 
 	$('.overlay').show();
-	console.log(this.files.length);
+	//console.log(this.files.length);
 	var filedata = '';
 	let filename = '';
     for(var i = 0; i < this.files.length; i++){     
@@ -304,7 +304,7 @@ alert("You are only allowed to upload a maximum of 2 files or Links");
         processData: false,
         success:function(data){
         	var name = filename;    
-        	console.log(data);
+        	//console.log(data);
         	var decode_json = JSON.parse(data);
         	if (decode_json['detail']) {
         		alert(decode_json['detail']);
@@ -325,7 +325,7 @@ alert("You are only allowed to upload a maximum of 2 files or Links");
         	
         	for (var i = 0; i < decode_json['files'].length; i++) {
         		url_parse_ids.push(decode_json['files'][i]['id']);
-        		console.log(url_parse_ids);
+        		//console.log(url_parse_ids);
         	}
 
         	//console.log(filedeletefull_name);
@@ -346,7 +346,7 @@ alert("You are only allowed to upload a maximum of 2 files or Links");
 
 $(document).on('click', 'span.file-delete', function(){
 	let name = $(this).attr("id");
-         console.log(name);
+         //console.log(name);
         $(this).parent().remove();
         for(let i = 0; i < dt.items.length; i++){   
 
@@ -359,7 +359,7 @@ $(document).on('click', 'span.file-delete', function(){
         document.getElementById('file').files = dt.files;
 
          for (var i = 0; i < url_parse_ids.length; i++) {
-	 	console.log(url_parse_ids[i].replace(/-TS:[^/]+/, ''));
+	 	//console.log(url_parse_ids[i].replace(/-TS:[^/]+/, ''));
 	 	var filelink = url_parse_ids[i].replace(/-TS:[^/]+/, '');
 	 	url_parse_ids = url_parse_ids.filter(x => x !== name);
 	 	// console.log(url_parse_ids);
@@ -368,7 +368,7 @@ $(document).on('click', 'span.file-delete', function(){
 	 		//console.log("found");
 	 		var indexToRemove = i;
             url_parse_ids.splice(indexToRemove, 1);
-	 		console.log(url_parse_ids);
+	 		//console.log(url_parse_ids);
 	 	}
 	 	else{
 	 		//console.log("no found");
@@ -433,7 +433,7 @@ function go_data(){
 	var selectedVal = "";
 	var oprations = $('input[name="oprations"]:checked').val();
     var fileUpload = $("input[type='file']");
-    console.log(url_parse_ids);
+    //console.log(url_parse_ids);
     $('#fetch_statsquotes').html("");
     $('#output_data_common_pov').html("");
      $('#output_data_common_pov_next').html("");
