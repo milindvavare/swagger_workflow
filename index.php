@@ -627,13 +627,7 @@ if (!isset($_SESSION['user'])) {
 	    </form>
 	  </div>
 	</nav>
-
 </section>
-
-
-
-
-
 
 
 <div class="overlay">

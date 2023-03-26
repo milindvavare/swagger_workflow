@@ -78,13 +78,14 @@ let arr_links2 = [];
 														children_links += '<li class="new-list">';
 														children_links += '<button type="button" class="btn  position-relative">';
 														children_links += ''+arr_links[i]+'';
-														children_links += '<span style="font-size:13px;color:white;" class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle cross-button delete_from_array" id="'+arr_links[i]+'" onclick="return this.parentNode.remove()">X';
+														children_links += '<span style="font-size:13px;color:white;" class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle cross-button delete_from_array_url" id="'+arr_links[i]+'" onclick="return this.parentNode.remove()">X';
 														children_links += '</span>';
 														children_links += '</button>';
 														children_links += '</li>';
 					                              }
 					                            $('#linksList').html(children_links);
 					                            var jsondata = JSON.parse(data);
+					                            url_parse_ids = [];
 					                            for (var im = 0; im < jsondata['files'].length; im++) {
 					                                //console.log(jsondata['files'][i]['id']);
 					                                url_parse_ids.push(jsondata['files'][im]['id']);
@@ -127,6 +128,7 @@ let arr_links2 = [];
 					            method:'POST',
 					             data:{url_links:arr_links},
 					             success:function(data){
+					             	console.log(data);
 					             	var decode_json = JSON.parse(data);
 							        	if (decode_json['detail']) {
 							        		alert(decode_json['detail']);
@@ -154,7 +156,7 @@ let arr_links2 = [];
 					                              	children_links += '<li class="new-list">';
 														children_links += '<button type="button" class="btn  position-relative">';
 														children_links += ''+arr_links[i]+'';
-														children_links += '<span style="font-size:13px;color:white;" class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle cross-button delete_from_array" id="'+arr_links[i]+'" onclick="return this.parentNode.remove()">X';
+														children_links += '<span style="font-size:13px;color:white;" class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle cross-button delete_from_array_url" id="'+arr_links[i]+'" onclick="return this.parentNode.remove()">X';
 														children_links += '</span>';
 														children_links += '</button>';
 														children_links += '</li>';
@@ -164,10 +166,10 @@ let arr_links2 = [];
 					                            console.log(data);
 					                            var jsondata = JSON.parse(data);
 					                            console.log(jsondata['files'].length);
-
-					                            for (var im = 0; im < jsondata['files'].length; im++) {
+					                            url_parse_ids = [];
+					                            for (var im = 0; im < jsondata['files'].length; im++) {					                            	
 					                                console.log(jsondata['files'][im]['id']);
-					                                url_parse_ids.push(jsondata['files'][i]['id']);
+					                                url_parse_ids.push(jsondata['files'][im]['id']);
 					                            }
 
 					                            
@@ -200,12 +202,13 @@ let arr_links2 = [];
 $(document).on('click', '.delete_from_array', function(){
   var link = $(this).attr("id");
   arr_links = arr_links.filter(x => x !== link);
+
  
  for (var i = 0; i < url_parse_ids.length; i++) {
-	 	console.log(url_parse_ids[i].replace(/-TS:[^/]+/, ''));
+	 	console.log("replaceurl:"+url_parse_ids[i].replace(/-TS:[^/]+/, ''));
 	 	var filelink = url_parse_ids[i].replace(/-TS:[^/]+/, '');
 	 	url_parse_ids = url_parse_ids.filter(x => x !== link);
-	 	// console.log(url_parse_ids);
+	 	console.log(url_parse_ids);
 
 	 	if (link == filelink) {
 	 		//console.log("found");
@@ -218,6 +221,35 @@ $(document).on('click', '.delete_from_array', function(){
 	 	}
    }
 });
+
+
+
+
+
+$(document).on('click', '.delete_from_array_url', function(){
+  var link = $(this).attr("id");
+  arr_links = arr_links.filter(x => x !== link);
+  // alert(link);
+ 
+ for (var i = 0; i < url_parse_ids.length; i++) {
+	 	//console.log("replaceurl:"+url_parse_ids[i].replace(/-TS:[^/]+/, ''));
+	 	var filelink = url_parse_ids[i].replace(/-TS:[^/]+/, '');
+	 	//var filelink = url_parse_ids[i];
+	 	url_parse_ids = url_parse_ids.filter(x => x !== link);
+	 	console.log("urlname:"+filelink);
+
+	 	if (link == filelink) {
+	 		//console.log("found");
+	 		var indexToRemove = i;
+            url_parse_ids.splice(indexToRemove, 1);
+	 		console.log(url_parse_ids);
+	 	}
+	 	else{
+	 		//console.log("no found");
+	 	}
+   }
+});
+
 
 
 
@@ -420,7 +452,7 @@ function go_data(){
 	var selectedVal = "";
 	var oprations = $('input[name="oprations"]:checked').val();
     var fileUpload = $("input[type='file']");
-
+    console.log(url_parse_ids);
     $('#fetch_statsquotes').html("");
     $('#output_data_common_pov').html("");
      $('#output_data_common_pov_next').html("");
