@@ -750,7 +750,7 @@ $('.open_upload_limit').click(function(){
 $('.submit_rating').click(function(){
 	var rating = $('.rating_no').val();
 	var text_feedback = $('.text_feedback').val()
-	var response_id = 'HRV_01.csv-TS:1679436416.9055552';
+	var response_id = $('.response_id').val();
 	//console.log(rating);
 	$.ajax({
 		url:'php/feedback.php',
