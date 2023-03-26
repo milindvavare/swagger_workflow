@@ -522,7 +522,7 @@ function go_data(){
          var fetch_workflow = '<ul class="menu-ul">';
          var combined_outputs = '<div class="boxes card" style="padding:20px 20px;"><label class="boxes-title" style="color:#D35400;">Combined Outputs</label>';
            fetch_workflow += "<li class='menu-li-head-title'>Common POVs</li>";
-        fetch_workflow += "<li class=''>Combined View (Across all files)</li>";
+        fetch_workflow += "<li style='font-size:12px;margin-bottom:10px;margin-top:5px;' class=''>Combined View (Across all files)</li>";
         for (var m = 0; m < jsondata['workflow_response'][i]['combined_outputs'].length; m++) {
           
            if (jsondata['workflow_response'][i]['combined_outputs'][m]['tag'] == 'common_pov') {
@@ -546,8 +546,8 @@ function go_data(){
              
              document_level_outputs_file += '<div class="boxes card" style="padding:20px 20px;"><label class="boxes-title">File Name : '+jsondata['workflow_response'][i]['document_level_outputs'][n]['file_name']+'</label>';
           
-             fetch_workflow += "<li class=''>"+jsondata['workflow_response'][i]['document_level_outputs'][1]['file_name']+"</li>";
-             fetch_resources += "<li style='margin-left:-30px;'>"+jsondata['workflow_response'][i]['document_level_outputs'][1]['file_name']+"</li>";
+             fetch_workflow += "<li style='font-size:12px;margin-bottom:10px;' class=''>"+jsondata['workflow_response'][i]['document_level_outputs'][n]['file_name']+"</li>";
+             fetch_resources += "<li style='margin-left:-30px;'>"+jsondata['workflow_response'][i]['document_level_outputs'][n]['file_name']+"</li>";
            var outputs_document_level = jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'];
            for (var o = 0; o < outputs_document_level.length; o++) {
              
