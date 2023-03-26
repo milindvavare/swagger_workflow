@@ -85,7 +85,7 @@ let arr_links2 = [];
 					                              }
 					                            $('#linksList').html(children_links);
 					                            var jsondata = JSON.parse(data);
-					                            url_parse_ids = [];
+					                            //url_parse_ids = [];
 					                            for (var im = 0; im < jsondata['files'].length; im++) {
 					                                //console.log(jsondata['files'][i]['id']);
 					                                url_parse_ids.push(jsondata['files'][im]['id']);
@@ -166,7 +166,7 @@ let arr_links2 = [];
 					                            console.log(data);
 					                            var jsondata = JSON.parse(data);
 					                            console.log(jsondata['files'].length);
-					                            url_parse_ids = [];
+					                            //url_parse_ids = [];
 					                            for (var im = 0; im < jsondata['files'].length; im++) {					                            	
 					                                console.log(jsondata['files'][im]['id']);
 					                                url_parse_ids.push(jsondata['files'][im]['id']);
@@ -265,7 +265,7 @@ if(url_parse_ids.length >= 2){
 else{
 
 if(this.files.length > 2){
-//alert("Error");
+alert("You are only allowed to upload a maximum of 2 files or Links");
 
 }else{
 
@@ -293,25 +293,6 @@ if(this.files.length > 2){
     this.files = dt.files;
 
 
-
- // $('span.file-delete').click(function(){
- //         //let name = $(this).attr('id');
- // 	let name = $(this).attr("id");
- //         console.log(name);
- //        $(this).parent().remove();
- //        for(let i = 0; i < dt.items.length; i++){   
-
- //            if(name == dt.items[i].getAsFile().name){               
- //                dt.items.remove(i);
- //                continue;
- //            }
- //        }
- //        // Mise à jour des fichiers de l'input file après suppression
- //        document.getElementById('file').files = dt.files;
- //    });
-
-
-
  let myform = document.getElementById("form");
   let formData = new FormData(myform);
       $.ajax({
@@ -333,7 +314,7 @@ if(this.files.length > 2){
 		                continue;
 			            }
 			        }
-			        // Mise à jour des fichiers de l'input file après suppression
+			   
 			        document.getElementById('file').files = dt.files;
         		$('.overlay').hide();
         	}
@@ -344,7 +325,7 @@ if(this.files.length > 2){
         	
         	for (var i = 0; i < decode_json['files'].length; i++) {
         		url_parse_ids.push(decode_json['files'][i]['id']);
-        		//console.log(url_parse_ids);
+        		console.log(url_parse_ids);
         	}
 
         	//console.log(filedeletefull_name);

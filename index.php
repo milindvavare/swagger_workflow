@@ -139,16 +139,16 @@ if (!isset($_SESSION['user'])) {
 
 		<div class="card" style="padding: 20px 20px;">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 				<label class="label-text">What are you looking at getting today?</label>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div class="row">
-					<div class="col-md-4">
-						<input type="radio" name="oprations" class="oprations" id="stats_quotes" value="StatsQuotes"><label for="stats_quotes" style="font-weight: 500">&nbsp;Stats & Quotes</label>
+					<div class="col-md-5">
+						<input type="radio" name="oprations" class="oprations" id="stats_quotes" value="StatsQuotes"><label for="stats_quotes" style="font-weight: 500">&nbsp;Stats & Quotes (Works best with Podcasts)</label>
 					</div>
-					<div class="col-md-3">
-						<input type="radio" name="oprations" class="oprations" id="povs" value="PoV"><label for="povs" style="font-weight: 500">&nbsp;POVs</label>
+					<div class="col-md-2">
+						<input type="radio" name="oprations" class="oprations" id="povs" value="PoV"><label for="povs" style="font-weight: 500">&nbsp;Common POVs</label>
 					</div>
 					<div class="col-md-5">
 						<input type="radio" name="oprations" class="oprations" id="questions" value="Questions" disabled><label for="questions" style="font-weight: 500;">&nbsp;Interesting Insights (Coming Soon)</label>
@@ -173,14 +173,12 @@ if (!isset($_SESSION['user'])) {
 								<div style="width: 100%;height: 40px;border:1px solid  #F63309;border-radius: 5px;line-height: 40px;padding: 0px 20px;color: black;">
 									<label for="file">Choose Files</label>
 										<form id="form" method="POST" enctype="multipart/form-data">
-									<input style="display:none;" type="file"  id="file" name="file[]"  accept=".csv, .pdf" multiple>
+									<input style="display:none;" type="file"  id="file" name="file[]"  accept=".csv, .pdf" >
 								</form>
 								</div>
 								  <div style="margin-top: 10px;" class="row">
 								    	<div class="col-md-3">
-								    		<!-- <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-											  Launch demo modal
-											</button>-->										
+								    												
 											<i class="far fa-question-circle open_upload_limit openBtn" style="font-size: 14px;" data-mdb-toggle="modal" data-mdb-target="#exampleModal"></i>
 											<span style="font-size: 14px;" class="open_upload_limit openBtn" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Upload Limit</span>
 
@@ -189,68 +187,68 @@ if (!isset($_SESSION['user'])) {
 
 
 
-<style type="text/css">
-	.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    display: none;
-}
+								<style type="text/css">
+									.modal{
+								    position: fixed;
+								    top: 0;
+								    left: 0;
+								    background: rgba(0,0,0,0.5);
+								    width: 100%;
+								    height: 100%;
+								    display: none;
+								}
 
-.showModal{
-    display: block;
-}
+								.showModal{
+								    display: block;
+								}
 
-.modal .modal-content{
-    background: #f4f4f4;
-    max-width: 30%;
-    margin: 10% auto;
-    box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.5), 5px 3px 10px 0px rgba(0,0,0,0.5);
-}
+								.modal .modal-content{
+								    background: #f4f4f4;
+								    max-width: 30%;
+								    margin: 10% auto;
+								    box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.5), 5px 3px 10px 0px rgba(0,0,0,0.5);
+								}
 
-.modal-content > *{
-    padding: 1em;
-}
+								.modal-content > *{
+								    padding: 1em;
+								}
 
-.close{
-    float: right;
-    font-size: 30px;
-    color: #fff;
-    opacity: 0.6;
-}
+								.close{
+								    float: right;
+								    font-size: 30px;
+								    color: #fff;
+								    opacity: 0.6;
+								}
 
-.close:hover{
-    cursor: pointer;
-    opacity: 1;
-}
+								.close:hover{
+								    cursor: pointer;
+								    opacity: 1;
+								}
 
-.modal .modal-header{
-    background: #029999;
-    color: #fff;
-    padding: .2em 1em;
-}
+								.modal .modal-header{
+								    background: #029999;
+								    color: #fff;
+								    padding: .2em 1em;
+								}
 
-.modal-header h2{
-    font-weight: 300;
-}
+								.modal-header h2{
+								    font-weight: 300;
+								}
 
-.modal-body p{
-    margin: 1em 0;
-}
-.modal-body label{
-    display: block;
-    font-size: 16px;
-}
+								.modal-body p{
+								    margin: 1em 0;
+								}
+								.modal-body label{
+								    display: block;
+								    font-size: 16px;
+								}
 
-.modal-body form input, .modal-body form button{
-    width: 100%;
-    padding: 0.7em;
-    border: 1px solid #029999;
-}
-</style>
+								.modal-body form input, .modal-body form button{
+								    width: 100%;
+								    padding: 0.7em;
+								    border: 1px solid #029999;
+								}
+								</style>
 
 
 

@@ -11,6 +11,8 @@ foreach ($files as $index => $file) {
     );
 }
 
+//print_r($postData);
+
 $request = curl_init('http://closed-beta-load-balancer-369913841.ap-south-1.elb.amazonaws.com/closed_beta/upload_files');
 curl_setopt($request, CURLOPT_POST, true);
 curl_setopt($request, CURLOPT_POSTFIELDS, $postData);
