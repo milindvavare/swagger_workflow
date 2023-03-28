@@ -475,7 +475,7 @@ if (!isset($_SESSION['user'])) {
 					<label class="label-text">Ready?</label>
 				</div>
 				<div class="col-md-6">
-					<button style="width: 130px;" class="btn btn-info go_btn" disabled>Go!</button>
+					<button style="width: 130px;" class="btn btn-info go_btn">Go!</button>
 				</div>
 			</div>
 		</div>
@@ -521,7 +521,8 @@ if (!isset($_SESSION['user'])) {
 				</ul>
 				<hr>
 				<div id="fetch_workflow">
-			<!-- 	<ul class="menu-ul">
+
+			<!--<ul class="menu-ul">
 					<li class="menu-li-head-title">POVs</li>
 				</ul>
 				<ul class="menu-ul">
@@ -529,7 +530,8 @@ if (!isset($_SESSION['user'])) {
 					<li>Article 1</li>
 					<li>Podcast</li>
 					<li>Video</li>
-				</ul> -->
+				</ul>-->
+				
 			   </div>
 				<hr>
 				<ul class="menu-ul">

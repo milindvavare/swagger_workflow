@@ -1,0 +1,52 @@
+{
+  "runtime": 58.69852113723755,
+  "workflow_response": [
+    {
+      "workflow_name": "PoV",
+      "combined_outputs": [
+        {
+          "file_ids": [
+            "HRV_01.csv-TS:1679990268.8495464",
+            "HRV_02.csv-TS:1679990278.133736"
+          ],
+          "output": "1. (Source 1, Point 3) and (Source 2, Point 1) both discuss the importance of understanding the day-to-day variability of HRV data. \n2. (Source 1, Point 5) and (Source 2, Point 4) both emphasize the importance of analyzing long-term trends in HRV data.\n3. (Source 1, Point 6) and (Source 2, Point 5) both emphasize that HRV should not be interpreted as \"higher is better\".\n4. (Source 1, Point 7) and (Source 2, Point 6) both emphasize the importance of contextualizing HRV data with other factors.",
+          "tag": "common_pov"
+        }
+      ],
+      "document_level_outputs": [
+        {
+          "file_name": "HRV_01.csv",
+          "file_id": "HRV_01.csv-TS:1679990268.8495464",
+          "outputs": [
+            {
+              "response_id": "b2eb58fb-4aba-47cd-a55b-9644e49be6f16941baea-cd3e-11ed-a082-31633418ce83-TS:1679990345.5935624",
+              "output": "HRV is a way to measure the activity of the autonomic nervous system and is the most practical, non-invasive and cost-effective way to do so. Morning and full-night measurements are the two reliable ways to measure HRV. Stressors such as alcohol, training, food, etc. can acutely impact resting physiology. HRV4Training integrates with standard sensors and the Oura ring to capture rMSSD values, which are transformed into a score between 5 and 10. It is important to note that HRV data is highly individual and has high day-to-day variability, so it should not be compared to others and should not be interpreted as \"higher is better\". HRV4Training does the math to analyze how training and lifestyle impact our physiology.",
+              "tag": "summary"
+            },
+            {
+              "response_id": "b2eb58fb-4aba-47cd-a55b-9644e49be6f16941baea-cd3e-11ed-a082-31633418ce83-TS:1679990345.5935624",
+              "output": "1. HRV is a practical, non-invasive and cost-effective way to measure the activity of the autonomic nervous system.\n2. Morning and night measurements are the two well-established and reliable ways to measure HRV.\n3. rMSSD is the most meaningful and practical HRV value to use, as it reflects parasympathetic activity.\n4. HRV4Training integrates with various sensors and can provide analytics and interpretations of the data.\n5. HRV data is highly individual and has inherently high day-to-day variability, meaning it is not meaningful to compare to others.\n6. HRV should not be interpreted as “higher is better”.\n7. To make effective use of the data, we need to be able to determine what changes are trivial or part of normal day-to-day fluctuations and what changes do matter.",
+              "tag": "pov"
+            }
+          ]
+        },
+        {
+          "file_name": "HRV_02.csv",
+          "file_id": "HRV_02.csv-TS:1679990278.133736",
+          "outputs": [
+            {
+              "response_id": "b2eb58fb-4aba-47cd-a55b-9644e49be6f16941baea-cd3e-11ed-a082-31633418ce83-TS:1679990345.5935624",
+              "output": "HRV data should be used as a continuous feedback loop to improve health and performance. It is important to determine a normal range to easily establish if a change in HRV is meaningful, and to analyze both acute changes (in response to strong stressors) and medium to long-term trends (in response to larger stressors). Training shifts the autonomic nervous system towards a sympathetic drive, which is reflected in higher HR and lower HRV. Context is key when it comes to HRV monitoring, and subjective metrics and objective data should be taken into account when interpreting the data. HRV should be looked at in relation to the stressors, and contextualized with other factors such as travel, subjective parameters, training load, and normal range.",
+              "tag": "summary"
+            },
+            {
+              "response_id": "b2eb58fb-4aba-47cd-a55b-9644e49be6f16941baea-cd3e-11ed-a082-31633418ce83-TS:1679990345.5935624",
+              "output": "1. HRV data has an inherently high day-to-day variability, so it is important to determine what changes are trivial and what changes are meaningful.\n2. Acute changes (day-to-day variability in response to strong stressors) and medium to long-term trends (long-term responses and adaptation to larger stressors) should be analyzed to understand how the body responds to stressors.\n3. Intense workouts typically cause a reduction in HRV on the following day, but positive adaptation to stress should result in a stable or increased HRV.\n4. Long-term changes can be analyzed by looking at the HRV baseline (7-day moving average) with respect to the normal values (historical data).\n5. Stability is the ideal response to stress, as it shows that the body is able to cope and respond positively to the stressors.\n6. Context is key when interpreting HRV data, as it represents the response to stressors such as training and lifestyle.\n7. Subjective feel and HRV are not supposed to reflect the same aspects or align over time, but they can be used together to better understand the body's response to stressors.\n8. HRV should be used as a continuous feedback loop to improve health and performance, rather than just focusing on the HRV data itself.\n9. Contextualizing HRV data with other factors such as travel, subjective parameters, and training load is important for making meaningful adjustments.\n\nThe Consolidated Arguments are:\n\n1. HRV data has an inherently high day-to-day variability, so it is important to determine what changes are trivial and what changes are meaningful.\n2. Acute changes (day-to-day variability in response to strong stressors) and medium to long-term trends (long-term responses and adaptation to larger stressors) should be analyzed to understand how the body responds to stressors.\n3. Intense workouts typically cause a reduction in HRV on the following day, but positive adaptation to stress should result in a stable or increased HRV.\n4. Long-term changes can be analyzed by looking at the HRV baseline (7-day moving average) with respect to the normal values (historical data).\n5. Stability is the ideal response to stress, as it shows that the body is able to cope and respond positively to the stressors.\n6. Context is key when interpreting HRV data, as it represents the response to stressors such as training and lifestyle; subjective feel and HRV should be used together to better understand the body's response to stressors; and HRV should be used as a continuous feedback loop to improve health and performance, rather than just focusing on the HRV data itself. \n7. Contextualizing HRV data with other factors such as travel, subjective parameters, and training load is important for making meaningful adjustments.",
+              "tag": "pov"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

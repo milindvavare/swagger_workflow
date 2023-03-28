@@ -388,7 +388,6 @@ $(document).on('click', 'span.file-delete', function(){
 
 
 $('.go_btn').click(function(){
-
 	var keywords = $('.keywords').val();
 	var selectedVal = "";
 	var oprations = $('input[name="oprations"]:checked').val();
@@ -396,7 +395,6 @@ $('.go_btn').click(function(){
    //console.log(oprations);
 	if($('input[name="oprations"]:checked').length ){
 	     // $(".go_btn").removeAttr("disabled");
-
     if (oprations == 'StatsQuotes') {
          go_data();
     }
@@ -417,16 +415,10 @@ else{
 
 });
 
-
-
 function nl2br (str, is_xhtml) {
      var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
      return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
- }
-
-
-
-
+}
 
 function go_data(){
 	var keywords = $('.keywords').val();
@@ -448,13 +440,13 @@ function go_data(){
 	$('.overlay').show();
 	$.ajax({
 	   type:'POST',
-	  url: 'php/keyword.php',
-	   //url:'js/pov.json',
+	   url: 'php/keyword.php',
+	   //url:'js/test.json',
        //url:'js/test4.json',
 	   data:{keywords:keywords, oprations:oprations, url_parse_ids:url_parse_ids},
 	   success:function(data){
 	   	$('.overlay').hide();
-	   	//console.log(data);
+	   	console.log(data);
 	   	if(data == '408') {
 	   		alert("This is taking longer than usual, sorry! Please try again in sometime.");
 	   		$('.overlay').hide();
@@ -467,7 +459,7 @@ function go_data(){
        	}
        	else{
 	    var jsondata = JSON.parse(data);
-	   //	var jsondata = data;
+	   	//var jsondata = data;
 	   	var outputs = '';
 	   	var fetch_workflow = '<ul class="menu-ul">';
       var fetch_resources = '<ul class="menu-ul">';
@@ -565,10 +557,12 @@ function go_data(){
               $('.response_id').val(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['response_id']);
 
               if (tag_output == 'summary') {
-                for (var p = 0; p < jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'].length; p++) {
-                   document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'][p]+'</p>';
-                }
+              	console.log(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']);
+                // for (var p = 0; p < jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'].length; p++) {
+                //    document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'][p]+'</p>';
+                // }
                
+                document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']+'</p>';
               }
               else{
                 document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']+'</p>';
