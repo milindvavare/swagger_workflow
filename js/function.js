@@ -84,6 +84,7 @@ let arr_links2 = [];
 														children_links += '</li>';
 					                              }
 					                            $('#linksList').html(children_links);
+					                            url_parse_ids = [];
 					                            var jsondata = JSON.parse(data);
 					                            //url_parse_ids = [];
 					                            for (var im = 0; im < jsondata['files'].length; im++) {
@@ -164,9 +165,9 @@ let arr_links2 = [];
 					                            $('#linksList').html(children_links);
 
 					                           // console.log(data);
+					                             url_parse_ids = [];
 					                            var jsondata = JSON.parse(data);
-					                            //console.log(jsondata['files'].length);
-					                            //url_parse_ids = [];
+					                            //console.log(jsondata['files'].length);					                           
 					                            for (var im = 0; im < jsondata['files'].length; im++) {					                            	
 					                                //console.log(jsondata['files'][im]['id']);
 					                                url_parse_ids.push(jsondata['files'][im]['id']);
@@ -425,7 +426,14 @@ function go_data(){
 	var selectedVal = "";
 	var oprations = $('input[name="oprations"]:checked').val();
     var fileUpload = $("input[type='file']");
-    //console.log(url_parse_ids);
+   
+
+    for (var array_file = 0; array_file < url_parse_ids.length; array_file++) {
+    	//console.log(url_parse_ids[array_file].replace(/-TS:[^/]+/, ''));  
+
+    }
+
+
     $('#fetch_statsquotes').html("");
     $('#output_data_common_pov').html("");
      $('#output_data_common_pov_next').html("");
@@ -467,7 +475,6 @@ function go_data(){
 	   	var output_data_quotes = '';
 	   	var output_data_stats = '';
 	   	for (var i = 0; i < jsondata['workflow_response'].length; i++) {
-
 
 	   		if (jsondata['workflow_response'][i]['workflow_name'] == 'StatsQuotes') {
 
@@ -557,7 +564,7 @@ function go_data(){
               $('.response_id').val(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['response_id']);
 
               if (tag_output == 'summary') {
-              	console.log(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']);
+              	//console.log(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']);
                 for (var p = 0; p < jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'].length; p++) {
                    document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'][p]+'</p>';
                 }
@@ -617,26 +624,7 @@ function go_data(){
 	   		}
 	   		$('#fetch_statsquotes').html(fetch_statsquotes+'</div>');
             //$('.resources').html(fetch_resources);
-
-
-
-
-
-
-
-
-
 	   	 }
-
-
-
-
-
-
-
-
-
-
 
 	   	}
 	   	//$('.content-p').html(outputs);
