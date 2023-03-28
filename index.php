@@ -475,7 +475,7 @@ if (!isset($_SESSION['user'])) {
 					<label class="label-text">Ready?</label>
 				</div>
 				<div class="col-md-6">
-					<button style="width: 130px;" class="btn btn-info go_btn">Go!</button>
+					<button style="width: 130px;" class="btn btn-info go_btn" disabled>Go!</button>
 				</div>
 			</div>
 		</div>

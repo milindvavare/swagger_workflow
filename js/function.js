@@ -446,7 +446,7 @@ function go_data(){
 	   data:{keywords:keywords, oprations:oprations, url_parse_ids:url_parse_ids},
 	   success:function(data){
 	   	$('.overlay').hide();
-	   	console.log(data);
+	   //console.log(data);
 	   	if(data == '408') {
 	   		alert("This is taking longer than usual, sorry! Please try again in sometime.");
 	   		$('.overlay').hide();
@@ -558,11 +558,11 @@ function go_data(){
 
               if (tag_output == 'summary') {
               	console.log(jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']);
-                // for (var p = 0; p < jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'].length; p++) {
-                //    document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'][p]+'</p>';
-                // }
+                for (var p = 0; p < jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'].length; p++) {
+                   document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output'][p]+'</p>';
+                }
                
-                document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']+'</p>';
+                //document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']+'</p>';
               }
               else{
                 document_level_outputs_file += '<p>'+jsondata['workflow_response'][i]['document_level_outputs'][n]['outputs'][o]['output']+'</p>';
