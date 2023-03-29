@@ -17,6 +17,14 @@ if (!isset($_SESSION['user'])) {
 	<link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
 	  rel="stylesheet"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "gerybsg30u");
+</script>
+
 </head>
 <style type="text/css">
 	/*body{
@@ -125,6 +133,20 @@ if (!isset($_SESSION['user'])) {
 		cursor: pointer;
 	}
 </style>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-14P25PXJER"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-14P25PXJER');
+</script>
+
+
+
 <body>
 
 
