@@ -173,7 +173,7 @@ if (!isset($_SESSION['user'])) {
 						<input type="radio" name="oprations" class="oprations" id="povs" value="PoV"><label for="povs" style="font-weight: 500">&nbsp;Common POVs</label>
 					</div>
 					<div class="col-md-5">
-						<input type="radio" name="oprations" class="oprations" id="questions" value="Questions" disabled><label for="questions" style="font-weight: 500;">&nbsp;Interesting Insights (Coming Soon)</label>
+						<input type="radio" name="oprations" class="oprations" id="questions" value="KeyInsights"><label for="questions" style="font-weight: 500;">&nbsp;Interesting Insights</label>
 					</div>
 				</div>
 			</div>

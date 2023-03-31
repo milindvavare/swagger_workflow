@@ -408,6 +408,10 @@ $('.go_btn').click(function(){
     	}
 
     }   
+    else if (oprations == 'KeyInsights') {
+    	go_data();
+    }
+    
  }
 else{
 	alert("Select What are you looking at getting today?");
@@ -454,7 +458,7 @@ function go_data(){
 	   data:{keywords:keywords, oprations:oprations, url_parse_ids:url_parse_ids},
 	   success:function(data){
 	   	$('.overlay').hide();
-	   //console.log(data);
+	  //console.log(data);
 	   	if(data == '408') {
 	   		alert("This is taking longer than usual, sorry! Please try again in sometime.");
 	   		$('.overlay').hide();
@@ -588,8 +592,8 @@ function go_data(){
 
 	   	 else{
 
-
-
+			 var key_insights_data = '';
+			 var data_summary = '';
 	   	 	// fetch_workflow += "<li class='menu-li-head-title'>"+jsondata['workflow_response'][i]['workflow_name']+"</li>";
 	   			fetch_workflow += "<li class='menu-li-head-title'>Interesting Insights</li>";
         var fetch_resources = '';
@@ -605,21 +609,42 @@ function go_data(){
                 fetch_statsquotes += '<div style="padding:20px 20px;" class="card">';
                 fetch_statsquotes += '<label style="font-weight:bold">File Name - '+document_level_outputs[j]['file_name']+'</label><hr>';
 	   			var outputs_response = document_level_outputs[j]['outputs'];
+	   			//console.log(outputs_response.length);
+
 	   			for (var k = 0; k < outputs_response.length; k++) {
 	   				//console.log(outputs_response[k]['response_id']); //response
 
 	   				$('.response_id').val(outputs_response[k]['response_id']);
-	   				//console.log(outputs_response[k]['output']); //outputs
-	   				//outputs += '<p>'+outputs_response[k]['output']+'</p>';
-	   				//console.log(outputs_response[k]['output'][1]);
-	   				data_summary = nl2br(outputs_response[k]['output'][0]);
-	   				quotes_related_to_the_theme=nl2br(outputs_response[k]['output'][1]);
-	   				//stats_related_to_the_theme = nl2br(outputs_response[k]['output'][2]);
-	   				fetch_statsquotes += '<div  style="padding:20px 20px;"><label class="boxes-title">Summary</label><p>'+data_summary+'</p></div>';	   				
-	   				//output_data_summary += '<div class="boxes" style="padding:20px 20px;"><label class="boxes-title">Summary</label><p>'+data_summary+'</p></div>';
-	   				fetch_statsquotes += '<div class="boxes" style="padding:20px 20px;"><label class="boxes-title">Insights related to the theme</label><p>'+quotes_related_to_the_theme+'</p></div>';
+	   				//console.log(outputs_response[k]['output'].length); //outputs
+
+	   				
+
+	   				//console.log(outputs_response[k]['tag']);  	
+
+	   				if (outputs_response[k]['tag'] == 'summary') {
+
+	   					 for (var r = 0; r < outputs_response[k]['output'].length; r++) {
+	   				 	   //console.log(outputs_response[k]['output'][r]);
+	   					 	data_summary = nl2br(outputs_response[k]['output'][r]);
+	   					 	fetch_statsquotes += '<div  style="padding:20px 20px;"><label class="boxes-title">Summary</label><p>'+data_summary+'</p></div>';
+
+
+	   				     }
+                          
+	   				}
+	   				else{
+	   					 for (var s = 0; s < outputs_response[k]['output'].length; s++) {
+	   				 	   //console.log(outputs_response[k]['output'][s]);
+	   					 	key_insights_data =nl2br(outputs_response[k]['output'][s]);
+	   					 	fetch_statsquotes += '<div class="boxes" style="padding:20px 20px;"><label class="boxes-title">Insights related to the theme</label><p>'+key_insights_data+'</p></div>';
+	   				     }
+	   				}			
+
+	   				//stats_related_to_the_theme = nl2br(outputs_response[k]['output'][2]);	   					   				
+	   				//output_data_summary += '<div class="boxes" style="padding:20px 20px;"><label class="boxes-title">Summary</label><p>'+data_summary+'</p></div>';	   				
 	   				//fetch_statsquotes +='<div class="boxes" style="padding:20px 20px;"><label class="boxes-title">Facts & Stats related to the theme</label><p>'+stats_related_to_the_theme+'</p></div>';
-	   			}
+	   				 }
+
 	   			fetch_statsquotes += '</div><br>';	
 	   		}
 	   		$('#fetch_statsquotes').html(fetch_statsquotes+'</div>');
