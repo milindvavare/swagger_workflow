@@ -41,10 +41,12 @@ let arr_links2 = [];
 			               arr_links.push(url_links);
 		                 }
 		    			//alert(mx_length);
-		    		    $('.overlay').show();
+		    		    $('.overlay').show(); 
+		    		    document.getElementById("please_wait_message").innerHTML = 'Your podcast is being transcribed. It will take around 3-5 mins depending on the duration.';
 		    			 if (url_parse_ids.length >= 2) {
 					        alert("You are only allowed to upload a maximum of 2 files or Links");
 					        $('.overlay').hide();
+					        document.getElementById("please_wait_message").innerHTML = 'Please Wait..';
 					      }
 					      else{
 					        $.ajax({
@@ -203,7 +205,6 @@ let arr_links2 = [];
 $(document).on('click', '.delete_from_array', function(){
   var link = $(this).attr("id");
   arr_links = arr_links.filter(x => x !== link);
-
  
  for (var i = 0; i < url_parse_ids.length; i++) {
 	 	//console.log("replaceurl:"+url_parse_ids[i].replace(/-TS:[^/]+/, ''));
@@ -222,8 +223,6 @@ $(document).on('click', '.delete_from_array', function(){
 	 	}
    }
 });
-
-
 
 
 
@@ -254,9 +253,7 @@ $(document).on('click', '.delete_from_array_url', function(){
 
 
 
-
 ///////////Start Files Upload 
-
 
 const dt = new DataTransfer();
 $("#file").on('change', function(e){
@@ -314,8 +311,7 @@ alert("You are only allowed to upload a maximum of 2 files or Links");
 		                dt.items.remove(i);
 		                continue;
 			            }
-			        }
-			   
+			        }			   
 			        document.getElementById('file').files = dt.files;
         		$('.overlay').hide();
         	}

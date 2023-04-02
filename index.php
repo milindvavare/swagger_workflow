@@ -17,6 +17,14 @@ if (!isset($_SESSION['user'])) {
 	<link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
 	  rel="stylesheet"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+
 	<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -27,9 +35,9 @@ if (!isset($_SESSION['user'])) {
 
 </head>
 <style type="text/css">
-	/*body{
-		background: black;
-	}*/
+	body{
+	  
+	}
 	.left_menu{
 		height: 99vh;
 		background: white;
@@ -816,6 +824,7 @@ $('.run_another_task').click(function(){
 	$('#3').removeClass("active_rating");
 	$('#4').removeClass("active_rating");
 	$('#5').removeClass("active_rating");
+	location.reload();
 })
 
 
