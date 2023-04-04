@@ -199,13 +199,30 @@ if (!isset($_SESSION['user'])) {
 				    <div class="main-box">
 				    	<div class="box-left">
 				    		<div>
+
+				    			<style type="text/css">
+				    				.choose_file_btn{
+				    					width: 100%;height: 40px;text-align: left;border:1px solid grey;
+				    					border-radius: 5px;
+				    				}
+				    				.choose_file_btn:hover{
+				    					background: #6db2d0!important;
+				    					border:1px solid #6db2d0;
+				    					color: white;
+				    				}
+				    			</style>
+
 								<label class="label-text">Select Files</label>
-								<div style="width: 100%;height: 40px;border:1px solid  #F63309;border-radius: 5px;line-height: 40px;padding: 0px 20px;color: black;">
-									<label for="file">Choose Files</label>
-										<form id="form" method="POST" enctype="multipart/form-data">
+
+							
+								<form id="form" method="POST" enctype="multipart/form-data">
 									<input style="display:none;" type="file"  id="file" name="file[]"  accept=".csv, .pdf" >
 								</form>
-								</div>
+								
+								<button class="choose_file_btn">Choose Files</button>
+
+
+
 								  <div style="margin-top: 10px;" class="row">
 								    	<div class="col-md-3">
 								    												
@@ -838,5 +855,10 @@ function closeModal(e){
         $('.modal').removeClass('showModal');
     }
 }
+
+
+$('.choose_file_btn').click(function(){
+	$('#file').click();
+})
 </script>
 
